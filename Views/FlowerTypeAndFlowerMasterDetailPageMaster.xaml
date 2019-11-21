@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_15520419.Views.FlowerTypeAndFlowerMasterDetailPageMaster"
+             xmlns:viewmode="clr-namespace:MVVM_15520419.ViewModels"
+             Title="Master">
+    <ContentPage.BindingContext>
+        <viewmode:FlowerTypeAndFlowerMasterDetailViewModel/>
+    </ContentPage.BindingContext>
+  <StackLayout>
+        <ListView ItemsSource="{Binding FlowerTypes}" SelectedItem="{Binding FlowerTypeSelected}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

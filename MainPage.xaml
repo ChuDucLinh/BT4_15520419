@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM_15520419"
+             x:Class="MVVM_15520419.MainPage">
+
+    <StackLayout>
+        <Button x:Name="cmdThemloai" Text="Thêm loại hoa" Clicked="cmdThemloai_Clicked"/>
+        <Button x:Name="cmdThemHoa" Text="Thêm  hoa" Clicked="cmdThemHoa_Clicked"/>
+        <Button x:Name="cmdDSHoa" Text="Hiển Thị Hoa" Clicked="cmdDSHoa_Clicked"/>
+        <Button x:Name="cmdTabbedPage" Text="Tabbed Page" Clicked="cmdTabbedPage_Clicked" />
+        <Button x:Name="cmdCarrouselPage" Text="Carousel Page" Clicked="cmdCarrouselPage_Clicked" />
+        <Button x:Name="cmdMasterDetailPage" Text="Master Detail Page" Clicked="cmdMasterDetailPage_Clicked" />
+    </StackLayout>
+
+</ContentPage>

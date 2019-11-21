@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_15520419.Views.FlowerTypeAndFlowerMasterDetailPage"
+             xmlns:viewmode="clr-namespace:MVVM_15520419.ViewModels"
+             xmlns:pages="clr-namespace:MVVM_15520456.Views">
+    <MasterDetailPage.BindingContext>
+        <viewmode:FlowerTypeAndFlowerMasterDetailViewModel/>
+    </MasterDetailPage.BindingContext>
+    <MasterDetailPage.Master Title="Danh Sách Loại Hoa">
+    <pages:FlowerTypeAndFlowerMasterDetailPageMaster x:Name="MasterPage" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:FlowerTypeAndFlowerMasterDetailPageDetail />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmode="clr-namespace:MVVM_15520419.ViewModels"
+             x:Class="MVVM_15520419.Views.FlowersPage">
+    <ContentPage.BindingContext>
+        <viewmode:AddFlowerViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker ItemsSource="{Binding FlowerTypes}" 
+                    SelectedItem="{Binding SelectedFlowerType ,Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" />
+            <ListView ItemsSource="{Binding  Flowers}" SelectedItem="{Binding Flower, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Image}" Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

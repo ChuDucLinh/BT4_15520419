@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmode="clr-namespace:MVVM_15520419.ViewModels"
+             x:Class="MVVM_15520419.Views.AddFlowerPage">
+    <ContentPage.BindingContext>
+        <viewmode:AddFlowerViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Mã Loại" Grid.Column="0" Grid.Row="0"/>
+                <Picker Title="Chọn loại hoa" x:Name="cboFlowerType" ItemsSource="{Binding FlowerTypes, Mode=TwoWay}" 
+                        SelectedItem="{Binding SelectedFlowerType}" 
+                        ItemDisplayBinding="{Binding Name}" 
+                         
+                        Grid.Column="1" Grid.Row="0"/>
+                <Label Text="Tên hoa" Grid.Column="0" Grid.Row="1"/>
+                <Entry x:Name="txttenhoa" Text="{Binding Flower.Name ,Mode=TwoWay}" Grid.Column="1" Grid.Row="1"/>
+                <Label Text="Hình" Grid.Column="0" Grid.Row="2"/>
+                <Entry x:Name="txthinh" Grid.Column="1" Text="{Binding Flower.Image,  Mode=TwoWay}" Grid.Row="2"/>
+                <Label Text="Giá bán" Grid.Column="0" Grid.Row="3"/>
+                <Entry x:Name="txtgia" Grid.Column="1" Text="{Binding Flower.Price, Mode=TwoWay}" Grid.Row="3"/>
+                <Label Text="Mô tả" Grid.Column="0" Grid.Row="4"/>
+                <Editor x:Name="txtMota" Grid.Column="1" Text="{Binding Flower.Description, Mode=TwoWay}" Grid.Row="4"/>
+                <Button x:Name="cmdthemhoa" Text="Thêm hoa" Grid.Column="0" Grid.Row="5" 
+                        Command="{Binding AddFlower}"/>
+                <Button x:Name="cmdxoa" Text="Xóa hoa" Grid.Column="1" Grid.Row="5" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
